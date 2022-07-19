@@ -1,0 +1,83 @@
+landexploer_donate = {
+
+    init : function() {
+
+        this.$donateButtonNav = jQuery('#menu-lndxplrr-main-top a:contains("DONATE")');
+
+        this.injectDonateAmountField();
+        this.setUpStripeHandler();
+        this.addEvents();
+
+    },
+
+    injectDonateAmountField : function() {
+
+        this.$donateButtonNav.before('<div class="donate_amount_wrap_menu"><span class="donate_amount_prefix">&pound;</span><input class="donate_amount" type="number" placeholder="Amount"/></div>');
+
+    },
+
+    setUpStripeHandler : function() {
+
+        var publicKey = landexplorer_stripe_is_in_test_mode ? landexplorer_stripe_pub_test_key : landexplorer_stripe_pub_live_key
+
+        this.handler = StripeCheckout.configure({
+            key: publicKey,
+            image: landexplorer_stripe_popup_image,
+            locale: 'auto',
+            token: function(token) {
+                landexploer_donate.processStripeRequest(token);
+            }
+        });
+
+    },
+
+    addEvents : function() {
+
+        this.$donateButtonNav.on('click', function() {
+            var amount = parseFloat(jQuery('.donate_amount_wrap_menu .donate_amount').val())*100;
+            if (!isNaN(amount)) {
+                landexploer_donate.openStripe(amount);
+            }
+
+        });
+
+        jQuery('.donate_shortcode_btn').on('click', function() {
+            var amount = parseFloat(jQuery('.donate_shortcode_amount').val())*100;
+            if (!isNaN(amount)) {
+                landexploer_donate.openStripe(amount);
+            }
+        });
+
+    },
+
+    openStripe : function(amount) {
+        this.amount = amount;
+        this.handler.open({
+            name: 'Land Explorer',
+            description: 'Thank you for donating!',
+            currency: 'gbp',
+            amount: amount
+        });
+    },
+
+    processStripeRequest : function(token) {
+
+        jQuery.ajax({
+            type: 'POST',
+            url: ajaxurl,
+            data: {
+                action: 'handle_payment',
+                token: token.id,
+                amount: landexploer_donate.amount
+            },
+            success : function (response) {
+                window.location = response;
+            },
+            dataType: 'text'
+        });
+
+    }
+
+};
+
+landexploer_donate.init();

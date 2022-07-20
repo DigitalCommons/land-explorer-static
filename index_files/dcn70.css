@@ -3,6 +3,12 @@
   src: url(./Lato-Regular.ttf) format("truetype");
 }
 
+.email-address {
+  color: white;
+  font-size: 16px;
+  font-family: "Lato Regular";
+}
+
 .menu {
   font-family: "Lato Regular" !important;
 }

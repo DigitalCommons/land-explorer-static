@@ -2011,27 +2011,18 @@ Updates: disabled
                                                     .then(json => console.log(json))
                                             }
                                         </script>
-                                        <form action="https://landexplorer.coop/api/" method="get"
-                                            data-av-custom-send="mailchimp_send"
-                                            class="avia_ajax_form av-form-labels-visible   avia-builder-el-140  el_after_av_heading  el_before_av_textblock    avia-mailchimp-form "
-                                            data-avia-form-id="2" data-avia-redirect="">
-                                            <fieldset>
-                                                <p class=" first_form  form_element form_fullwidth"
-                                                    id="element_avia_4_2"><label for="avia_4_2">Name</label> <input
-                                                        name="avia_4_2" class="text_input " type="text" id="avia_4_2"
-                                                        value=""></p>
-                                                <p class=" first_form  form_element form_fullwidth av-last-visible-form-element"
-                                                    id="element_avia_0_2"><label for="avia_0_2">Email Address <abbr
-                                                            class="required" title="required">*</abbr></label> <input
-                                                        name="avia_0_2" class="text_input is_email" type="text"
-                                                        id="avia_0_2" value=""></p>
-                                                <p class="hidden"><input type="text" name="avia_avia_username_2"
-                                                        class="hidden " id="avia_avia_username_2" value=""></p>
-                                                <p class="form_element "><input type="hidden" value="1"
-                                                        name="avia_generated_form2"><input
-                                                        onclick="addToMailingList('empty','balls')" type="submit"
-                                                        value="Submit" class="button" data-sending-label="Sending"></p>
-                                            </fieldset>
+                                        <form
+                                            action="https://buttondown.email/api/emails/embed-subscribe/DigitalCommonsCoop"
+                                            method="post" target="popupwindow"
+                                            onsubmit="window.open('https://buttondown.email/DigitalCommonsCoop', 'popupwindow')"
+                                            class="embeddable-buttondown-form email-address">
+                                            <label for="bd-email">Enter your email</label>
+                                            <input type="email" name="email" id="bd-email" />
+                                            <input type="submit" value="Subscribe" />
+                                            <p>
+                                                <a href="https://buttondown.email" target="_blank">Powered by
+                                                    Buttondown.</a>
+                                            </p>
                                         </form>
                                         <div id="ajaxresponse_2" class="ajaxresponse ajaxresponse_2 hidden"></div>
                                         <section class="av_textblock_section " itemscope="itemscope"

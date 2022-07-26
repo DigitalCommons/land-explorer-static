@@ -286,7 +286,7 @@ Updates: disabled
     <div id="wrap_all">
         <header id="spork_header_landexplorer">
             <div class="navbar-shadow"></div>
-            <div class="navbar"><a href="https://landexplorer.cc/auth">
+            <div class="navbar"><a href="https://app.landexplorer.coop" class="app-link">
                     <div class="big-logo"></div>
                 </a>
                 <div class="navbar-right">
@@ -300,7 +300,7 @@ Updates: disabled
                     <ul id="menu-lndxplrr-main-top" class="menu">
                         <li id="menu-item-3317"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3317"><a
-                                href="https://landexplorer.coop/">Login / Signup</a></li>
+                                class="app-link" href="https://app.landexplorer.coop/">Login / Signup</a></li>
                         <li id="menu-item-3241"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-206 current_page_item menu-item-3241">
                             <a href="#top">Home</a>
@@ -576,8 +576,8 @@ Updates: disabled
                                         style="border-radius:0px; ">
                                         <div
                                             class="avia-button-wrap avia-button-center  avia-builder-el-5  avia-builder-el-no-sibling  ">
-                                            <a href="https://app.landexplorer.cc/auth/"
-                                                class="avia-button av-icon-on-hover  avia-icon_select-yes-left-icon avia-color-light avia-size-x-large avia-position-center "
+                                            <a href="https://app.landexplorer.coop/"
+                                                class="app-link avia-button av-icon-on-hover  avia-icon_select-yes-left-icon avia-color-light avia-size-x-large avia-position-center "
                                                 target="_blank"><span class="avia_button_icon avia_button_icon_left "
                                                     aria-hidden="true">
                                                     <i class="fa-solid fa-share"></i>
@@ -2236,6 +2236,18 @@ Updates: disabled
         <i class="fa-solid fa-angle-up"></i>
     </a>
     <div id="fb-root"></div>
+    <script>
+        //add correct links to the app
+        const url = window.location.href;
+
+        if (url == "https://testing-lx.com" || url == "https://www.testing-lx.com") {
+            const appLink = "https://app.testing-lx.com";
+            const links = document.getElementsByClassName("app-link");
+            for (let link of links) {
+                link.href = appLink;
+            }
+        }
+    </script>
 </body>
 
 </html>

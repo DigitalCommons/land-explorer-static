@@ -9871,6 +9871,11 @@ body div .avia-testimonial {
   border: none;
   padding: 0px;
 }
+
+.avia-testimonial_inner {
+  width: 25%;
+}
+
 .av-boxed-grid-style .avia-testimonial_inner {
   padding: 40px;
 }

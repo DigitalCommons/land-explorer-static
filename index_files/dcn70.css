@@ -11473,11 +11473,13 @@ span.mejs-offscreen {
 #top .av-video-slide .mejs-overlay-button {
   display: none;
 }
+/*
 #top .av-video-slide .avia-slide-wrap {
   background: #000
     url(//landexplorer.cc/wp-content/themes/enfold/images/layout/preload-dark-grey-big.gif)
     no-repeat center center;
 }
+*/
 #top .av-video-slide.av-video-service-youtube .avia-slide-wrap {
   background: #000;
 }

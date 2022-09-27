@@ -13797,7 +13797,7 @@ div .mejs-controls {
 .dc-crowdfunder-banner .dc-crowdfunder-banner-content {
   align-self: center;
   font-family: var(--font-sans-title);
-  font-size: 2rem;
+  font-size: 1.2rem;
   /*grid-column: main-start/main-end;*/
   grid-row: 1/1;
   justify-self: left;
@@ -13808,7 +13808,7 @@ div .mejs-controls {
 .dc-crowdfunder-banner .dc-crowdfunder-banner-button {
   align-items: center;
   align-self: center;
-  background-color: var(--brand-color);
+  background-color: #ffffff;
   border: 0;
   border-radius: 999px;
   border-width: 0;
@@ -13826,4 +13826,8 @@ div .mejs-controls {
   outline: none;
   padding: 0;
   transition: opacity 0.3s ease;
+}
+
+.dc-crowdfunder-banner-button-text {
+  color: #7d808d;
 }

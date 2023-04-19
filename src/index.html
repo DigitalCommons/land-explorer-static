@@ -2363,6 +2363,13 @@ Updates: disabled
                 link.href = appLink;
             }
         }
+        if (url.includes("staging.landexplorer.coop")) {
+            const appLink = "https://staging.app.landexplorer.coop";
+            const links = document.getElementsByClassName("app-link");
+            for (let link of links) {
+                link.href = appLink;
+            }
+        }
     </script>
 </body>
 

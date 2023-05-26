@@ -12,5 +12,6 @@ fi
 # Pull latest files
 git pull
 
-# Copy the output into the default html directory
+# Copy the output into the html directory and delete old files
+rm -r /var/www/html/*
 cp -T -r ./src /var/www/html
